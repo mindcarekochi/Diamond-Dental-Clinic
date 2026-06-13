@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Diamond Dental Clinic by Dr. Praveen A.V. Offering top-quality dental care, implants, clear aligners, and cosmetic dentistry in Edoor, Kerala.">
+    <title>Dr. Praveen A.V. | Diamond Dental Clinic</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- CSS Variables & Reset --- */
+        :root {
+            --primary-blue: #0263c2;
+            --light-blue: #e8f4fd;
+            --dark-blue: #013e7a;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3 {
+            color: var(--dark-blue);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-blue);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--dark-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(2, 99, 194, 0.3);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+
+        /* --- Navbar --- */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-blue);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            margin-top: 80px;
+            background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.8)), url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1920&q=80') center/cover;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* --- About Section --- */
+        .about-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-img {
+            width: 100%;
+            max-height: 500px; /* Constrains height so the portrait image doesn't take too much vertical space */
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            object-fit: cover;
+            object-position: center top; /* Focuses on the face and upper body */
+        }
+
+        .about-content h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .about-content h4 {
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .about-content ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .about-content ul li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .about-content ul li i {
+            color: var(--primary-blue);
+        }
+
+        /* --- Services Section --- */
+        .bg-light {
+            background-color: var(--light-blue);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(2, 99, 194, 0.15);
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        /* --- Appointment & Contact --- */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .appointment-form {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-blue);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .info-item i {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-top: 5px;
+        }
+
+        .map-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #e8f4fd;
+            color: var(--primary-blue);
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: var(--transition);
+        }
+
+        .map-btn:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--dark-blue);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-blue);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: var(--white);
+            font-size: 1.8rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: #E1306C; /* Instagram Color */
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* --- Floating WhatsApp --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #128C7E;
+            color: white;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                text-align: center;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .about-wrapper, .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+            }
+
+            .btn {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-gem"></i> Diamond Dental
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <a href="https://www.instagram.com/diamonddentalkerala?igsh=amNheTA0YjNnZ3Jv" target="_blank" style="font-size: 1.2rem; color: #E1306C;">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </li>
+                <li><a href="#contact" class="btn btn-primary" style="color: white;">Book Appointment</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>A New Reason to Smile is Officially Here</h1>
+                <p>Welcome to Diamond Dental Clinic. Under the expert care of Dr. Praveen A.V., we bring advanced, painless treatments to give you the healthy, confident smile you deserve.</p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn btn-primary">Book an Appointment</a>
+                    <a href="tel:+919946974171" class="btn btn-outline">Call Us: 99469 74171</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container about-wrapper">
+            <div>
+                <!-- Doctor's local image inserted here -->
+                <img src="WhatsApp Image 2026-06-13 at 8.49.10 AM_2.jpg" alt="Dr. Praveen A.V." class="about-img">
+            </div>
+            <div class="about-content">
+                <h2>Meet Dr. Praveen A.V.</h2>
+                <h4>Chief Dental Surgeon</h4>
+                <p>Leading the expert team at Diamond Dental Clinic, Dr. Praveen A.V. is dedicated to providing personalized, gentle, and comprehensive dental care. From root canals to complex oral surgeries, your smile is our passion.</p>
+                <ul>
+                    <li><i class="fa-solid fa-check-circle"></i> Expertise in Orthodontics & Clear Aligners</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Specialist in Oral Surgery & Flap Surgery</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Pediatric & Cosmetic Dentistry Expert</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Committed to Pain-Free Procedures</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-light">
+        <div class="container">
+            <h2 class="section-title">Our Premium Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fa-solid fa-hands-bubbles"></i>
+                    <h3>Scaling & Filling</h3>
+                    <p>Professional deep cleaning (Scaling) and tooth-colored fillings to restore decayed teeth.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-tooth"></i>
+                    <h3>Root Canal Treatment</h3>
+                    <p>Advanced root canal therapy to relieve pain and save your natural tooth.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-teeth-open"></i>
+                    <h3>Crowns, Bridges & Dentures</h3>
+                    <p>Restore damaged teeth with crowns, and replace missing teeth with bridges or complete/partial dentures.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-face-smile"></i>
+                    <h3>Orthodontic & Clear Aligners</h3>
+                    <p>Straighten your smile effectively with traditional braces or invisible clear aligners.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <h3>Cosmetic & Teeth Whitening</h3>
+                    <p>Enhance your smile's aesthetics with customized cosmetic dentistry and professional whitening.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-syringe"></i>
+                    <h3>Oral & Flap Surgery</h3>
+                    <p>Specialized surgical extractions, implants, and flap surgery for optimal gum health.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment & Contact -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Visit Diamond Dental Clinic</h2>
+            <div class="contact-wrapper">
+                
+                <!-- NEW FUNCTIONAL BOOKING FORM -->
+                <div class="appointment-form">
+                    <h3>Request an Appointment</h3>
+                    <br>
+                    <form id="bookingForm" onsubmit="sendToWhatsApp(event)">
+                        <div class="form-group">
+                            <input type="text" id="userName" class="form-control" placeholder="Your Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="userPhone" class="form-control" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="date" id="userDate" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="userMessage" class="form-control" rows="4" placeholder="Briefly describe your dental issue (Optional)"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <i class="fa-brands fa-whatsapp"></i> Submit Request via WhatsApp
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Details -->
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <h4>Clinic Address</h4>
+                            <p>Poonam, Madathil - Edoor Rd,<br>Edoor, AKG Nagar,<br>Kerala 670704</p>
+                            <a href="https://maps.app.goo.gl/c9iJ4VZuY5iw5ku27?g_st=aw" target="_blank" class="map-btn">
+                                <i class="fa-solid fa-map-location-dot"></i> View on Google Maps
+                            </a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <h4>Contact Numbers</h4>
+                            <p>
+                                <a href="tel:+919946974171" style="color: var(--text-dark); text-decoration: none;">+91 99469 74171</a><br>
+                                <a href="tel:+918921474171" style="color: var(--text-dark); text-decoration: none;">+91 8921 474 171</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-clock"></i>
+                        <div>
+                            <h4>Clinic Timings</h4>
+                            <p>Monday - Saturday: Opens 9:30 AM<br><strong>Open on Sundays by Appointment Only</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 style="color: white; margin-bottom: 20px;"><i class="fa-solid fa-gem"></i> Diamond Dental Clinic</h3>
+                    <p style="color: #ddd;">Your smile, our passion. Providing world-class, painless dental care in AKG Nagar, Kerala.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/diamonddentalkerala?igsh=amNheTA0YjNnZ3Jv" target="_blank" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 style="color: white; margin-bottom: 20px;">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Dr. Praveen A.V.</a></li>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: white; margin-bottom: 20px;">Key Treatments</h3>
+                    <ul class="footer-links">
+                        <li><a href="#services">Root Canal Treatment</a></li>
+                        <li><a href="#services">Dental Implants</a></li>
+                        <li><a href="#services">Clear Aligners</a></li>
+                        <li><a href="#services">Pediatric Dentistry</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2026 Diamond Dental Clinic. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button updated to actual clinic number -->
+    <a href="https://wa.me/919946974171" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript for Mobile Menu & Form Submission -->
+    <script>
+        // --- 1. Mobile Menu Toggle ---
+        const mobileBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            if (navLinks.classList.contains('active')) {
+                mobileBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+            } else {
+                mobileBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            }
+        });
+
+        // Close menu when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            });
+        });
+
+        // --- 2. WhatsApp Form Submission Handler ---
+        function sendToWhatsApp(event) {
+            event.preventDefault(); // Prevents the page from refreshing
+
+            // Get the values the user typed into the form
+            const name = document.getElementById('userName').value;
+            const phone = document.getElementById('userPhone').value;
+            const date = document.getElementById('userDate').value;
+            const message = document.getElementById('userMessage').value;
+
+            // Clinic WhatsApp Number (Country Code + Number, no symbols)
+            const clinicNumber = "919946974171";
+
+            // Build the message format
+            const whatsappText = `*New Appointment Request*%0A%0A*Patient Name:* ${name}%0A*Contact Phone:* ${phone}%0A*Preferred Date:* ${date}%0A*Message:* ${message ? message : 'No specific message provided'}`;
+
+            // Create the final WhatsApp API link
+            const whatsappURL = `https://wa.me/${clinicNumber}?text=${whatsappText}`;
+
+            // Open WhatsApp link in a new tab to send the message
+            window.open(whatsappURL, '_blank');
+        }
+    </script>
+</body>
+</html>
